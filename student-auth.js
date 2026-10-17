@@ -52,22 +52,19 @@ function createSalt() {
 	return bytesToHex(bytes);
 }
 
-function courseHomeUrl(account) {
-	const courseHomes = {
-		'Intermediate 1st Year': 'intermediate-1st-year.html',
-		'Intermediate 2nd Year': 'intermediate-2nd-year.html',
-		'LAWCET Preparation': 'lawcet.html',
-		LLB: 'llb.html'
-	};
-	return courseHomes[account.course] || 'index.html#courses';
-}
-
 function openDashboard(account) {
 	authPanel.hidden = true;
 	dashboard.hidden = false;
 	document.querySelector('#dashboardTitle').textContent = `Welcome, ${account.name}!`;
 	document.querySelector('#dashboardCourse').textContent = account.course;
-	document.querySelector('#courseLink').href = courseHomeUrl(account);
+
+	const courseLinks = {
+		'Intermediate 1st Year': 'intermediate-1st-year.html',
+		'Intermediate 2nd Year': 'intermediate-2nd-year.html',
+		'LAWCET Preparation': 'lawcet.html',
+		LLB: 'llb.html'
+	};
+	document.querySelector('#courseLink').href = courseLinks[account.course] || 'index.html#courses';
 }
 
 signupTab.addEventListener('click', () => setMode('signup'));
@@ -108,7 +105,7 @@ signupForm.addEventListener('submit', async (event) => {
 		};
 		localStorage.setItem(STUDENT_ACCOUNTS_KEY, JSON.stringify(accounts));
 		sessionStorage.setItem(STUDENT_SESSION_KEY, email);
-		window.location.assign(courseHomeUrl(accounts[email]));
+		openDashboard(accounts[email]);
 	} catch (error) {
 		showMessage(error instanceof Error && error.message.includes('Secure password hashing')
 			? error.message
@@ -134,7 +131,7 @@ loginForm.addEventListener('submit', async (event) => {
 		}
 
 		sessionStorage.setItem(STUDENT_SESSION_KEY, email);
-		window.location.assign(courseHomeUrl(account));
+		openDashboard(account);
 	} catch (error) {
 		showMessage(error instanceof Error && error.message.includes('Secure password hashing')
 			? error.message
@@ -156,5 +153,5 @@ try {
 	const signedInAccount = signedInEmail ? readAccounts()[signedInEmail] : null;
 	if (signedInAccount) openDashboard(signedInAccount);
 } catch {
-	showMessage('Browser storage is unavailable. Please enable it to use your account.');
+	showMessage('Browser storage is unavailable. Please enable it to use the student portal.');
 }
