@@ -52,38 +52,60 @@
                 </a>
 
                 <div class="nav-dropdown">
-                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="intermediateMenu">
                         Intermediate
                     </button>
 
-                    <div class="nav-dropdown-menu">
-                        <a href="intermediate-1st-year.html" target="_blank" rel="noopener noreferrer">Intermediate 1st Year</a>
-                        <a href="intermediate-2nd-year.html" target="_blank" rel="noopener noreferrer">Intermediate 2nd Year</a>
+                    <div class="nav-dropdown-menu" id="intermediateMenu" aria-label="Intermediate courses">
+                        <a href="intermediate-1st-year.html" data-requires-account="true">
+                            <span class="nav-option-copy"><strong>Intermediate 1st Year</strong></span>
+                        </a>
+                        <a href="intermediate-2nd-year.html" data-requires-account="true">
+                            <span class="nav-option-copy"><strong>Intermediate 2nd Year</strong></span>
+                        </a>
                     </div>
                 </div>
 
-                <a href="bcom.html" target="_blank" rel="noopener noreferrer">
+                <a href="bcom.html">
                     B.Com
                 </a>
 
                 <div class="nav-dropdown">
-                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lawMenu">
                         Law Courses
                     </button>
 
-                    <div class="nav-dropdown-menu">
-                        <a href="lawcet.html" target="_blank" rel="noopener noreferrer">LAWCET Entrance Exam</a>
-                        <a href="llb.html" target="_blank" rel="noopener noreferrer">LLB Course</a>
+                    <div class="nav-dropdown-menu" id="lawMenu" aria-label="Law courses">
+                        <a href="lawcet.html" data-requires-account="true">
+                            <span class="nav-option-copy"><strong>LAWCET Preparation</strong></span>
+                        </a>
+                        <a href="llb.html" data-requires-account="true">
+                            <span class="nav-option-copy"><strong>LLB Course</strong></span>
+                        </a>
                     </div>
                 </div>
 
-                <a href="materials.html" target="_blank" rel="noopener noreferrer">
+                <a href="materials.html" data-requires-account="true">
                     Materials
                 </a>
 
                 <a href="#contact">
                     Contact Us
                 </a>
+
+                <div class="nav-dropdown account-nav-dropdown">
+                    <button class="nav-account-button" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="accountMenu">
+                        <span aria-hidden="true">♙</span> Log in / Sign up
+                    </button>
+                    <div class="nav-dropdown-menu nav-account-menu" id="accountMenu" aria-label="Account options">
+                        <a href="#accountTitle" data-account-mode="login">
+                            <span class="nav-option-copy"><strong>Log in</strong><small>Continue to your account</small></span>
+                        </a>
+                        <a href="#accountTitle" data-account-mode="signup">
+                            <span class="nav-option-copy"><strong>Create account</strong><small>Join YS Career Academy</small></span>
+                        </a>
+                    </div>
+                </div>
 
             </nav>
 
@@ -94,7 +116,9 @@
             <button
                 class="menu-button"
                 id="menuButton"
-                aria-label="Open Menu">
+                aria-label="Open Menu"
+                aria-controls="navMenu"
+                aria-expanded="false">
 
                 ☰
 
@@ -170,7 +194,6 @@
                 <div class="hero-visual">
                     <section class="account-card" aria-labelledby="accountTitle">
                         <div class="account-card-heading">
-                            <span class="account-kicker">YS CAREER ACADEMY</span>
                             <h2 id="accountTitle">Welcome back</h2>
                             <p id="accountDescription">Sign in to continue your learning journey.</p>
                         </div>
@@ -246,11 +269,6 @@
                 <div class="section-heading">
 
 
-                    <span>
-                        LEARNING
-                    </span>
-
-
                     <h2>
                         Explore Our Courses
                     </h2>
@@ -310,38 +328,20 @@
 
                     <!-- 2. INTERMEDIATE -->
 
-                    <a
-                        href="intermediate.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="course-card">
-
-
-                        <div class="course-icon">
-                            📚
+                    <div class="course-card course-choice-card">
+                        <div class="course-icon" aria-hidden="true">📚</div>
+                        <div class="course-choice-content">
+                            <h3>Intermediate</h3>
+                            <p>Choose your year to continue.</p>
+                            <label class="course-choice-label" for="intermediateChoice">Select year</label>
+                            <select class="course-choice-select" id="intermediateChoice">
+                                <option value="" selected disabled>Choose a year</option>
+                                <option value="intermediate-1st-year.html">Intermediate 1st Year</option>
+                                <option value="intermediate-2nd-year.html">Intermediate 2nd Year</option>
+                            </select>
+                            <button class="course-choice-button" type="button" data-course-choice="intermediateChoice">Continue</button>
                         </div>
-
-
-                        <div>
-
-                            <h3>
-                                Intermediate
-                            </h3>
-
-
-                            <p>
-                                1st Year & 2nd Year
-                            </p>
-
-                        </div>
-
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-
-                    </a>
+                    </div>
 
 
 
@@ -349,8 +349,6 @@
 
                     <a
                         href="bcom.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         class="course-card">
 
 
@@ -384,38 +382,20 @@
 
                     <!-- 4. LAW COURSES -->
 
-                    <a
-                        href="law.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="course-card">
-
-
-                        <div class="course-icon">
-                            ⚖️
+                    <div class="course-card course-choice-card">
+                        <div class="course-icon" aria-hidden="true">⚖️</div>
+                        <div class="course-choice-content">
+                            <h3>Law Courses</h3>
+                            <p>Select a law program to continue.</p>
+                            <label class="course-choice-label" for="lawChoice">Select program</label>
+                            <select class="course-choice-select" id="lawChoice">
+                                <option value="" selected disabled>Choose a program</option>
+                                <option value="lawcet.html">LAWCET Preparation</option>
+                                <option value="llb.html">LLB Course</option>
+                            </select>
+                            <button class="course-choice-button" type="button" data-course-choice="lawChoice">Continue</button>
                         </div>
-
-
-                        <div>
-
-                            <h3>
-                                Law Courses
-                            </h3>
-
-
-                            <p>
-                                Law Subjects & Video Classes
-                            </p>
-
-                        </div>
-
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-
-                    </a>
+                    </div>
 
 
 
@@ -423,8 +403,7 @@
 
                     <a
                         href="lawcet.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        data-requires-account="true"
                         class="course-card">
 
 
@@ -460,8 +439,7 @@
 
                     <a
                         href="materials.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        data-requires-account="true"
                         class="course-card">
 
 
@@ -621,134 +599,38 @@
         <!-- ================= WHY US ================= -->
 
         <section class="why-section">
-
-
             <div class="container">
-
-
                 <div class="section-heading">
-
-
-                    <span>
-                        WHY YS CAREER ACADEMY?
-                    </span>
-
-
-                    <h2>
-                        Everything You Need to Learn
-                    </h2>
-
-
+                    <span>WHY YS CAREER ACADEMY?</span>
+                    <h2>Everything You Need to Learn</h2>
                 </div>
-
-
 
                 <div class="features-grid">
-
-
-                    <!-- VIDEO CLASSES -->
-
                     <div class="feature">
-
-
-                        <div class="feature-icon">
-                            🎥
-                        </div>
-
-
-                        <h3>
-                            Video Classes
-                        </h3>
-
-
-                        <p>
-                            Easy-to-understand video lessons
-                            through our YouTube content.
-                        </p>
-
-
+                        <div class="feature-icon">🎥</div>
+                        <h3>Video Classes</h3>
+                        <p>Easy-to-understand video lessons through our YouTube content.</p>
                     </div>
 
-
-
-                    <!-- STUDY MATERIALS -->
-
                     <div class="feature">
-
-
-                        <div class="feature-icon">
-                            📚
-                        </div>
-
-
-                        <h3>
-                            Study Materials
-                        </h3>
-
-
-                        <p>
-                            Notes, previous papers and useful
-                            learning resources.
-                        </p>
-
-
+                        <div class="feature-icon">📚</div>
+                        <h3>Study Materials</h3>
+                        <p>Notes, previous papers and useful learning resources.</p>
                     </div>
 
-
-
-                    <!-- MOCK TESTS -->
-
                     <div class="feature">
-
-
-                        <div class="feature-icon">
-                            📝
-                        </div>
-
-
-                        <h3>
-                            Mock Tests
-                        </h3>
-
-
-                        <p>
-                            Practice and test your knowledge
-                            with online mock tests.
-                        </p>
-
-
+                        <div class="feature-icon">📝</div>
+                        <h3>Mock Tests</h3>
+                        <p>Practice and test your knowledge with online mock tests.</p>
                     </div>
 
-
-
-                    <!-- STUDENT ACCOUNT ACCESS -->
-
                     <div class="feature">
-
-
-                        <div class="feature-icon">
-                            🔔
-                        </div>
-
-
-                        <h3>
-                            Student Account Access
-                        </h3>
-
-
-                        <p>
-                            Quick access to student signup and
-                            login options.
-                        </p>
-
-
+                        <div class="feature-icon">🔔</div>
+                        <h3>Live Updates</h3>
+                        <p>Latest updates and notifications from YS Career Academy.</p>
                     </div>
-
-
                 </div>
-
             </div>
-
         </section>
 
 
@@ -942,7 +824,7 @@
                 </a>
 
 
-                <a href="intermediate.html">
+                <a href="intermediate-1st-year.html" data-requires-account="true">
                     Intermediate
                 </a>
 
@@ -952,12 +834,12 @@
                 </a>
 
 
-                <a href="law.html">
+                <a href="lawcet.html" data-requires-account="true">
                     Law Courses
                 </a>
 
 
-                <a href="materials.html">
+                <a href="materials.html" data-requires-account="true">
                     Materials
                 </a>
 
@@ -990,6 +872,8 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="account-auth.js"></script>
     <script src="script.js"></script>
 
 
