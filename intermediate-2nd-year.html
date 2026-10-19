@@ -7,7 +7,7 @@
     <meta name="description" content="Intermediate 2nd Year classes and study materials from YS Career Academy.">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="auth-guard-pending" data-require-auth="true">
     <header class="header">
         <div class="container navbar">
             <a href="index.html" class="logo">
@@ -42,5 +42,7 @@
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="account-auth.js"></script>
 </body>
 </html>
