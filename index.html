@@ -10,7 +10,7 @@
     <title>YS Career Academy</title>
 
     <meta name="description"
-        content="YS Career Academy - Educational videos, courses, study materials, law courses, LAWCET preparation and latest updates.">
+        content="YS Career Academy offers educational videos, courses, study materials, law courses and LAWCET preparation.">
 
     <link rel="stylesheet" href="style.css">
 
@@ -167,143 +167,61 @@
 
 
 
-                <!-- HERO RIGHT - LATEST UPDATES -->
-
                 <div class="hero-visual">
-
-
-                    <div class="updates-card">
-
-
-                        <!-- LATEST UPDATES HEADER -->
-
-                        <div class="updates-header">
-
-
-                            <div>
-
-                                <h2>
-                                    Latest Updates
-                                </h2>
-
-                            </div>
-
-
-                            <span class="notification-bell">
-                                🔔
-                            </span>
-
-
+                    <section class="account-card" aria-labelledby="accountTitle">
+                        <div class="account-card-heading">
+                            <span class="account-kicker">YS CAREER ACADEMY</span>
+                            <h2 id="accountTitle">Welcome back</h2>
+                            <p id="accountDescription">Sign in to continue your learning journey.</p>
                         </div>
 
-
-
-                        <!-- UPDATE LIST -->
-
-                        <div class="update-list">
-
-
-                            <!-- UPDATE 1 -->
-
-                            <div class="update-item">
-
-
-                                <span class="update-icon">
-                                    🆕
-                                </span>
-
-
-                                <div>
-
-                                    <h3>
-                                        New Video Added
-                                    </h3>
-
-
-                                    <p>
-                                        New educational video is now available.
-                                    </p>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <!-- UPDATE 2 -->
-
-                            <div class="update-item">
-
-
-                                <span class="update-icon">
-                                    📚
-                                </span>
-
-
-                                <div>
-
-                                    <h3>
-                                        New Study Material
-                                    </h3>
-
-
-                                    <p>
-                                        New learning material has been uploaded.
-                                    </p>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <!-- UPDATE 3 -->
-
-                            <div class="update-item">
-
-
-                                <span class="update-icon">
-                                    📝
-                                </span>
-
-
-                                <div>
-
-                                    <h3>
-                                        New LAWCET Mock Test
-                                    </h3>
-
-
-                                    <p>
-                                        New practice test is available.
-                                    </p>
-
-                                </div>
-
-
-                            </div>
-
-
+                        <div class="account-tabs" role="tablist" aria-label="Account access">
+                            <button class="account-tab is-active" id="loginTab" type="button" role="tab" aria-selected="true" aria-controls="loginForm">Log in</button>
+                            <button class="account-tab" id="signupTab" type="button" role="tab" aria-selected="false" aria-controls="signupForm">Create account</button>
                         </div>
 
+                        <form class="account-form" id="loginForm" role="tabpanel" aria-labelledby="loginTab">
+                            <label for="loginEmail">Email address</label>
+                            <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
 
+                            <label for="loginPassword">Password</label>
+                            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
 
-                        <!-- VIEW ALL UPDATES -->
+                            <button class="primary-button account-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+                        </form>
 
-                        <a
-                            href="notifications.html"
-                            class="view-updates">
+                        <form class="account-form" id="signupForm" role="tabpanel" aria-labelledby="signupTab" hidden>
+                            <label for="signupName">Full name</label>
+                            <input id="signupName" name="name" type="text" autocomplete="name" placeholder="Your full name" minlength="2" maxlength="80" required>
 
-                            View All Updates →
+                            <label for="signupEmail">Email address</label>
+                            <input id="signupEmail" name="email" type="email" autocomplete="email" placeholder="you@gmail.com" maxlength="254" required>
 
-                        </a>
+                            <label for="signupPhone">Mobile number</label>
+                            <input id="signupPhone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" inputmode="tel" pattern="[0-9+ ]{7,20}" title="Enter a valid phone number" maxlength="20" required>
 
+                            <label for="signupCourse">Course / year</label>
+                            <select id="signupCourse" name="course" required>
+                                <option value="" disabled selected>Select your course</option>
+                                <option>Intermediate 1st Year</option>
+                                <option>Intermediate 2nd Year</option>
+                                <option>B.Com</option>
+                                <option>LAWCET Preparation</option>
+                                <option>LLB</option>
+                                <option>Other</option>
+                            </select>
 
-                    </div>
+                            <label for="signupPassword">Create password</label>
+                            <input id="signupPassword" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" maxlength="128" required>
 
+                            <label for="signupConfirmPassword">Confirm password</label>
+                            <input id="signupConfirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter your password again" minlength="8" maxlength="128" required>
 
+                            <button class="primary-button account-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+                        </form>
+
+                        <p class="account-message" id="accountMessage" role="status" aria-live="polite"></p>
+                    </section>
                 </div>
 
 
@@ -803,7 +721,7 @@
 
 
 
-                    <!-- LATEST UPDATES -->
+                    <!-- STUDENT ACCOUNT ACCESS -->
 
                     <div class="feature">
 
@@ -814,13 +732,13 @@
 
 
                         <h3>
-                            Latest Updates
+                            Student Account Access
                         </h3>
 
 
                         <p>
-                            Important education and examination
-                            updates in one place.
+                            Quick access to student signup and
+                            login options.
                         </p>
 
 
